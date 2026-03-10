@@ -6,73 +6,136 @@
     <title>CV | Jesús Tadeo Ramírez Andrade</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
-        :root { --primary: #1e88e5; }
-        header { text-align: center; padding: 2rem 0; }
-        .project-card { border-left: 4px solid var(--primary); padding-left: 1rem; margin-bottom: 2rem; }
-        .badge { background: #e3f2fd; color: #0d47a1; padding: 0.2rem 0.5rem; border-radius: 5px; font-size: 0.8rem; }
+        /* Estilos para simular la hoja de papel */
+        body {
+            background-color: #f0f2f5; /* Color de fondo fuera de la hoja */
+            padding: 40px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .paper {
+            background-color: white;
+            width: 850px; /* Ancho estándar de hoja A4 aproximado */
+            min-height: 1100px;
+            padding: 50px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Sombra para dar profundidad */
+            border-radius: 8px;
+        }
+
+        header {
+            border-bottom: 2px solid #1e88e5;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        h1 { margin-bottom: 5px; color: #1e88e5; }
+        .subtitle { color: #666; font-size: 1.1rem; font-weight: bold; }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* 2 columnas: una ancha y una estrecha */
+            gap: 40px;
+        }
+
+        section { margin-bottom: 25px; }
+        h2 { 
+            font-size: 1.3rem; 
+            text-transform: uppercase; 
+            border-bottom: 1px solid #eee; 
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .project-item { margin-bottom: 15px; }
+        .project-name { font-weight: bold; color: #333; }
+        .tech-stack { font-size: 0.85rem; color: #1e88e5; font-weight: bold; }
+
+        .contact-info p { margin-bottom: 5px; font-size: 0.9rem; }
+        
+        /* Botón flotante para descargar sin arruinar el diseño de la hoja */
+        .download-fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+        }
+
+        @media (max-width: 900px) {
+            .paper { width: 95%; padding: 20px; }
+            .grid-container { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <main class="container">
+
+    <div class="download-fab">
+        <a href="cv-jesus-ramirez.pdf" download role="button" class="contrast">📥 Descargar PDF</a>
+    </div>
+
+    <div class="paper">
         <header>
             <h1>Jesús Tadeo Ramírez Andrade</h1>
-            <p><strong>Estudiante de Ingeniería en Sistemas | Android Developer Jr. | Soporte IT</strong></p>
-            <p>📍 Ocotlán, Jalisco, México</p>
-            <div style="display: flex; justify-content: center; gap: 15px;">
-                <a href="https://www.linkedin.com/in/jesus-tadeo-ramirez-andrade-9500aa376" target="_blank">LinkedIn</a>
-                <a href="https://github.com/TU_USUARIO" target="_blank">GitHub</a>
-                <a href="Currículum.pdf" download role="button" class="outline">Descargar PDF</a>
+            <p class="subtitle">Estudiante de Ingeniería en Sistemas | Android Developer Jr. | Soporte IT</p>
+            <div class="contact-info">
+                <p>📍 Ocotlán, Jalisco, México | 🔗 <a href="https://www.linkedin.com/in/jesus-tadeo-ramirez-andrade-9500aa376">LinkedIn</a></p>
             </div>
         </header>
 
-        <hr>
+        <div class="grid-container">
+            <div class="main-col">
+                <section>
+                    <h2>Sobre mí</h2>
+                    <p>Estudiante apasionado por crear soluciones digitales funcionales. Experiencia en desarrollo móvil y sistemas de gestión, combinada con sólidos conocimientos técnicos en soporte IT.</p>
+                </section>
 
-        <section>
-            <h2>Sobre mí</h2>
-            <p>Estudiante apasionado por crear herramientas digitales que solucionen problemas reales. Con experiencia en el desarrollo de apps móviles (Android/Java) y sistemas de gestión, combinada con conocimientos técnicos sólidos en soporte y mantenimiento de equipos.</p>
-        </section>
+                <section>
+                    <h2>Proyectos Destacados</h2>
+                    <div class="project-item">
+                        <span class="project-name">PetHealth App</span> — <span class="tech-stack">Java & Firebase</span>
+                        <p>Herramienta integral para mascotas con recordatorios, historial clínico y mapas de veterinarias.</p>
+                    </div>
+                    <div class="project-item">
+                        <span class="project-name">Sistema de Gestión Marisquería</span>
+                        <p>Automatización de comandas, monitor de cocina y generación de reportes PDF de ventas.</p>
+                    </div>
+                    <div class="project-item">
+                        <span class="project-name">E-commerce Merchandising</span> — <span class="tech-stack">Flutter</span>
+                        <p>Plataforma web para venta de artículos de anime y música.</p>
+                    </div>
+                </section>
 
-        <section>
-            <h2>Proyectos Destacados</h2>
-            
-            <article class="project-card">
-                <h3>PetHealth <span class="badge">Java & Firebase</span></h3>
-                <p>Aplicación Android completa para el cuidado de mascotas. Incluye recordatorios médicos, historial clínico digital, mapa de veterinarias locales y mensajería en tiempo real.</p>
-            </article>
-
-            <article class="project-card">
-                <h3>Sistema de Comandas para Marisquería</h3>
-                <p>Automatización de pedidos divididos por mesa con vista en tiempo real para cocina y generación de reportes de cierre diario en PDF para caja.</p>
-            </article>
-
-            <article class="project-card">
-                <h3>E-commerce de Merchandising <span class="badge">Flutter</span></h3>
-                <p>Plataforma de venta para figuras de anime, ropa y música con catálogo dinámico y gestión de inventario básica.</p>
-            </article>
-        </section>
-
-        <section>
-            <h2>Habilidades Técnicas</h2>
-            <div class="grid">
-                <div>
-                    <strong>Lenguajes y Herramientas:</strong>
-                    <ul>
-                        <li>Java (Android Studio)</li>
-                        <li>Flutter / Dart</li>
-                        <li>Python (Básico)</li>
-                        <li>Firebase & GitHub</li>
-                    </ul>
-                </div>
-                <div>
-                    <strong>Soporte IT:</strong>
-                    <ul>
-                        <li>Mantenimiento preventivo/correctivo</li>
-                        <li>Instalación de Windows y Office</li>
-                        <li>Gestión de hardware (PC/Laptop)</li>
-                    </ul>
-                </div>
+                <section>
+                    <h2>Educación</h2>
+                    <p><strong>Ingeniería en Sistemas Computacionales</strong><br>
+                    Instituto Tecnológico de Ocotlán | 2022 - Actualidad</p>
+                    <p><strong>Técnico en Programación</strong><br>
+                    CBTis No. 49 | 2019 - 2022</p>
+                </section>
             </div>
-        </section>
-    </main>
+
+            <div class="side-col">
+                <section>
+                    <h2>Habilidades</h2>
+                    <ul>
+                        <li>Android (Java)</li>
+                        <li>Firebase</li>
+                        <li>Flutter / Dart</li>
+                        <li>GitHub</li>
+                        <li>Soporte IT</li>
+                        <li>Windows/Office</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Idiomas</h2>
+                    <p>Español: Nativo<br>
+                    Inglés: Básico (A2)</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
