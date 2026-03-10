@@ -7,102 +7,158 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <style>
         body {
-            background-color: #e2e8f0;
+            background-color: #525659;
             margin: 0;
-            padding: 40px 20px;
+            padding: 40px 0;
             display: flex;
             justify-content: center;
-            font-family: system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .paper {
             background: white;
-            width: 100%;
-            max-width: 850px;
+            width: 850px;
             min-height: 1100px;
-            padding: 60px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            border-radius: 4px;
-            color: #1a202c;
+            padding: 50px 60px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            color: #333;
+            box-sizing: border-box;
         }
         header {
-            border-bottom: 3px solid #2563eb;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid #2563eb;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
         }
-        h1 { color: #1e40af; margin-bottom: 5px; font-size: 2.5rem; }
-        .subtitle { font-size: 1.2rem; color: #4b5563; font-weight: 600; }
+        .header-left h1 {
+            margin: 0;
+            color: #1e40af;
+            font-size: 2.2rem;
+            line-height: 1.1;
+        }
+        .header-left p {
+            margin-top: 10px;
+            font-weight: 600;
+            color: #4b5563;
+        }
+        .header-right {
+            text-align: right;
+            font-size: 0.85rem;
+            color: #4b5563;
+        }
         .grid-container {
             display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 50px;
+            grid-template-columns: 1.8fr 1fr;
+            gap: 40px;
         }
         h2 {
-            font-size: 1.2rem;
-            color: #1e40af;
+            font-size: 1.1rem;
+            color: white;
+            background: #1e40af;
+            padding: 5px 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-bottom: 1px solid #e5e7eb;
             margin-bottom: 15px;
-            padding-bottom: 5px;
         }
-        .project-item { margin-bottom: 20px; }
-        .project-name { font-weight: 700; display: block; }
-        .tech-stack { color: #2563eb; font-size: 0.85rem; font-weight: 600; }
+        .section-item {
+            margin-bottom: 18px;
+        }
+        .item-title {
+            font-weight: 700;
+            display: block;
+            color: #1a202c;
+        }
+        .item-date {
+            font-size: 0.85rem;
+            color: #6b7280;
+            font-style: italic;
+        }
+        .tech-tag {
+            color: #2563eb;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
         .download-btn {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1000;
         }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 5px; }
-        @media (max-width: 768px) {
-            .grid-container { grid-template-columns: 1fr; }
-            .paper { padding: 30px; }
+        ul {
+            padding-left: 18px;
+            margin-top: 5px;
+        }
+        li {
+            font-size: 0.9rem;
+            margin-bottom: 3px;
+        }
+        @media print {
+            body { background: none; padding: 0; }
+            .paper { box-shadow: none; width: 100%; margin: 0; }
+            .download-btn { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <a href="cv-jesus-ramirez.pdf" download class="download-btn" role="button">📥 Descargar CV PDF</a>
+    <a href="Currículum.pdf" download class="download-btn" role="button">📥 Descargar PDF</a>
 
     <div class="paper">
         <header>
-            <h1>Jesús Tadeo Ramírez Andrade</h1>
-            <div class="subtitle">Estudiante de Ingeniería en Sistemas | Android Developer Jr.</div>
-            <p>📍 Ocotlán, Jalisco | 🔗 <a href="https://www.linkedin.com/in/jesus-tadeo-ramirez-andrade-9500aa376" target="_blank">LinkedIn</a></p>
+            <div class="header-left">
+                <h1>Jesus Tadeo Ramirez Andrade</h1>
+                <p>Estudiante de Ingeniería en Sistemas | Android Developer Jr.</p>
+            </div>
+            <div class="header-right">
+                <p>📍 Privada de Graciano Sanchez #104, Ocotlán<br>
+                📞 (+52) 33-2744-7754<br>
+                ✉️ jesustadeoramirezandrade890@gmail.com<br>
+                🔗 <a href="https://www.linkedin.com/in/jesus-tadeo-ramirez-andrade-9500aa376" target="_blank">LinkedIn</a></p>
+            </div>
         </header>
 
         <div class="grid-container">
             <div class="left-col">
                 <section>
-                    <h2>Sobre mí</h2>
-                    <p>Desarrollador enfocado en soluciones móviles y automatización de procesos. Cuento con experiencia técnica en soporte y mantenimiento de infraestructura IT.</p>
+                    <h2>Experiencia</h2>
+                    <div class="section-item">
+                        <span class="item-title">Soporte Técnico y Mantenimiento (Independiente)</span>
+                        <p>Mantenimiento preventivo/correctivo, instalación de Windows, Office y configuración de software.</p>
+                    </div>
+                    <div class="section-item">
+                        <span class="item-title">Testing en el área de Frontend</span>
+                        <p>Revisión normativa de interfaces, ejecución de pruebas automatizadas y estándares de calidad web.</p>
+                    </div>
                 </section>
 
                 <section>
-                    <h2>Proyectos Destacados</h2>
-                    <div class="project-item">
-                        <span class="project-name">PetHealth App</span>
-                        <span class="tech-stack">Java • Firebase • Android Studio</span>
-                        <p>Gestión de citas, historial médico y geolocalización de veterinarias.</p>
+                    <h2>Proyectos</h2>
+                    <div class="section-item">
+                        <span class="item-title">PetHealth - Android App</span>
+                        <span class="tech-tag">Java & Firebase</span>
+                        <p>App con recordatorios médicos, historial clínico y geolocalización de veterinarias.</p>
                     </div>
-                    <div class="project-item">
-                        <span class="project-name">Sistema de Gestión Marisquería</span>
-                        <span class="tech-stack">Lógica de Negocio • Reportes PDF</span>
-                        <p>Control de comandas en tiempo real y cierre de caja automatizado.</p>
-                    </div>
-                    <div class="project-item">
-                        <span class="project-name">E-commerce Merchandising</span>
-                        <span class="tech-stack">Flutter • Dart</span>
-                        <p>Tienda web con catálogo dinámico para venta de productos.</p>
+                    <div class="section-item">
+                        <span class="item-title">Sistema de Gestión para Marisquería</span>
+                        <p>Automatización de pedidos por mesa, monitor de cocina y reportes de venta en PDF.</p>
                     </div>
                 </section>
 
                 <section>
                     <h2>Educación</h2>
-                    <p><strong>Ingeniería en Sistemas Computacionales</strong><br>Instituto Tecnológico de Ocotlán (2022-Pres.)</p>
-                    <p><strong>Técnico en Programación</strong><br>CBTis No. 49 (2019-2022)</p>
+                    <div class="section-item">
+                        <span class="item-title">Ingeniería en Sistemas Computacionales</span>
+                        <span class="item-date">Tecnológico de Ocotlán | 2022 - Actualidad</span>
+                    </div>
+                    <div class="section-item">
+                        <span class="item-title">Técnico en Programación</span>
+                        <span class="item-date">CBTis No. 49 | 2019 - 2022</span>
+                    </div>
+                    <div class="section-item">
+                        <span class="item-title">Contador</span>
+                        <span class="item-date">Escuela Secundaria Técnica 42 | 2016 - 2019</span>
+                    </div>
                 </section>
             </div>
 
@@ -110,18 +166,27 @@
                 <section>
                     <h2>Habilidades</h2>
                     <ul>
-                        <li>Java (Android Studio)</li>
-                        <li>Firebase</li>
-                        <li>Flutter / Dart</li>
-                        <li>GitHub</li>
-                        <li>Soporte IT</li>
-                        <li>Mantenimiento PC</li>
+                        <li>Desarrollo Android (Java)</li>
+                        <li>Firebase (Auth & DB)</li>
+                        <li>Flutter & Dart (Básico)</li>
+                        <li>Control de versiones (GitHub)</li>
+                        <li>Soporte técnico IT</li>
+                        <li>Mantenimiento de PC</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Reconocimientos</h2>
+                    <ul>
+                        <li>Fundamentos de Python 1</li>
                     </ul>
                 </section>
 
                 <section>
                     <h2>Idiomas</h2>
-                    <p>Español: Nativo<br>Inglés: Básico (A2)</p>
+                    <ul>
+                        <li>Español: Nativo</li>
+                    </ul>
                 </section>
             </div>
         </div>
