@@ -9,7 +9,7 @@
         body {
             background-color: #525659;
             margin: 0;
-            padding: 40px 0;
+            padding: 50px 0;
             display: flex;
             justify-content: center;
             font-family: 'Segoe UI', Arial, sans-serif;
@@ -17,49 +17,54 @@
         .paper {
             background: white;
             width: 850px;
-            min-height: 1100px; /* Altura mínima, pero crecerá si es necesario */
-            padding: 50px 70px; /* Más margen lateral para que no choque el texto */
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            min-height: 1100px;
+            padding: 50px 70px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
             color: #000000;
             box-sizing: border-box;
         }
         header {
             border-bottom: 2px solid #1e40af;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
         }
         h1 {
             margin: 0;
             color: #1e40af;
-            font-size: 1.8rem; /* Tamaño más equilibrado */
+            font-size: 1.8rem;
             text-transform: uppercase;
+            font-weight: 800;
         }
-        .subtitle {
-            margin-top: 5px;
-            font-weight: bold;
-            font-size: 0.95rem;
-            color: #333;
+        .intro-text {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            line-height: 1.3;
+            color: #000;
+            font-weight: 500;
         }
-        .contact-row {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            font-size: 0.8rem;
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 5px;
+            font-size: 0.75rem;
             margin-top: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
         }
         .grid-container {
             display: grid;
-            grid-template-columns: 1.6fr 1.1fr; /* Proporción más equilibrada */
-            gap: 40px;
+            grid-template-columns: 1.6fr 1fr;
+            gap: 35px;
+            margin-top: 20px;
         }
         h2 {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: white !important;
             background: #1e40af;
-            padding: 4px 10px;
+            padding: 5px 12px;
             text-transform: uppercase;
             margin-bottom: 15px;
-            border: none;
+            border-radius: 2px;
         }
         .section-item {
             margin-bottom: 20px;
@@ -71,57 +76,61 @@
             color: #000;
         }
         .item-sub {
-            font-weight: 600;
+            font-weight: 700;
             color: #1e40af;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             display: block;
-            margin-bottom: 2px;
         }
         .item-desc {
-            margin-top: 3px;
-            font-size: 0.85rem; /* Fuente más pequeña para que se acomode mejor */
+            margin-top: 4px;
+            font-size: 0.82rem;
             color: #000;
-            line-height: 1.4;
-            text-align: justify;
+            line-height: 1.5;
+            text-align: left;
         }
         ul {
-            padding-left: 15px;
+            padding-left: 18px;
             margin: 0;
         }
         li {
-            font-size: 0.85rem;
-            margin-bottom: 4px;
+            font-size: 0.82rem;
+            margin-bottom: 5px;
             font-weight: 500;
         }
         .download-btn {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 25px;
+            right: 25px;
             background-color: #1e40af;
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 24px;
+            border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.8rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 100;
+            font-size: 0.85rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
         }
-        a { color: #1e40af; }
+        a { color: #1e40af; text-decoration: none; }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
 
-    <a href="Currículum.pdf" download class="download-btn">📥 Descargar PDF</a>
+    <a href="Currículum.pdf" download class="download-btn">📥 Descargar CV PDF</a>
 
     <div class="paper">
         <header>
             <h1>Jesus Tadeo Ramirez Andrade</h1>
-            <p class="subtitle">Estudiante de Ingeniería apasionado por el desarrollo móvil</p>
-            <div class="contact-row">
+            <p class="intro-text">
+                Estudiante de Ingeniería apasionado por el desarrollo móvil y la resolución de problemas técnicos. 
+                Con experiencia en la creación de soluciones digitales desde cero (Java/Flutter) y mantenimiento de infraestructura IT.
+            </p>
+            <div class="contact-info">
                 <span>📍 Privada de Graciano Sanchez #104, Ocotlán, Jal.</span>
+                <span>✉️ <a href="mailto:jesustadeoramirezandrade890@gmail.com">jesustadeoramirezandrade890@gmail.com</a></span>
                 <span>📞 (+52) 33-2744-7754</span>
-                <span>✉️ jesustadeoramirezandrade890@gmail.com</span>
+                <span>🔗 <a href="https://www.linkedin.com/in/jesus-tadeo-ramirez-andrade-9500aa376" target="_blank">linkedin.com/in/jesus-tadeo-ramirez-andrade</a></span>
             </div>
         </header>
 
@@ -130,31 +139,32 @@
                 <section>
                     <h2>Experiencia</h2>
                     <div class="section-item">
-                        <span class="item-title">Independiente, Ocotlán Jal. - Soporte Técnico</span>
-                        <p class="item-desc">Mantenimiento preventivo y correctivo de equipos de cómputo (Laptops y PC). Instalación de sistemas operativos Windows, paquetería Office y configuración de software.</p>
+                        <span class="item-title">Soporte Técnico y Mantenimiento</span>
+                        <span class="item-sub">Independiente, Ocotlán Jal.</span>
+                        <p class="item-desc">Mantenimiento preventivo y correctivo de equipos de cómputo (Laptops y PC). Instalación de sistemas operativos Windows, paquetería Office y configuración de software especializado.</p>
                     </div>
                     <div class="section-item">
                         <span class="item-title">Testing en el área de Frontend</span>
-                        <p class="item-desc">Apoyo en la revisión normativa del diseño de las interfaces; además de la elaboración, ejecución de pruebas automatizadas y revisión del cumplimiento de estándares de calidad en páginas web.</p>
+                        <p class="item-desc">Apoyo en la revisión normativa del diseño de las interfaces; elaboración y ejecución de pruebas automatizadas, asegurando el cumplimiento de estándares de calidad y usabilidad en sitios web.</p>
                     </div>
                 </section>
 
                 <section>
                     <h2>Educación</h2>
                     <div class="section-item">
-                        <span class="item-title">Instituto Tecnologico de Ocotlan</span>
-                        <span class="item-sub">Ingeniería en sistemas computacionales | 2022 - Actualidad</span>
-                        <p class="item-desc">Avenida Tecnológico La Primavera, Ocotlán. Actualmente cursando la carrera, enfocado en el desarrollo de software y arquitectura de sistemas.</p>
+                        <span class="item-title">Instituto Tecnológico de Ocotlán</span>
+                        <span class="item-sub">Ingeniería en Sistemas Computacionales | 2022 - Actualidad</span>
+                        <p class="item-desc">Enfoque en desarrollo de software de alto rendimiento, algoritmos y arquitectura de sistemas distribuidos.</p>
                     </div>
                     <div class="section-item">
-                        <span class="item-title">CBTis Num 49</span>
-                        <span class="item-sub">Programación | 2019 - 2022</span>
-                        <p class="item-desc">Avenida del Cecyt Num. Ext. 100, Ocotlán. Formación técnica basada en lógica de programación y desarrollo de sistemas.</p>
+                        <span class="item-title">CBTis No. 49</span>
+                        <span class="item-sub">Técnico en Programación | 2019 - 2022</span>
+                        <p class="item-desc">Formación técnica integral en lógica de programación, bases de datos y desarrollo de aplicaciones básicas.</p>
                     </div>
                     <div class="section-item">
-                        <span class="item-title">Escuela Secundaria Tecnica 42</span>
+                        <span class="item-title">Escuela Secundaria Técnica 42</span>
                         <span class="item-sub">Contador | 2016 - 2019</span>
-                        <p class="item-desc">Calle Alfredo Gomez Arceo Num. Ext. 47, Ocotlán. Formación técnica en contabilidad y administración básica.</p>
+                        <p class="item-desc">Introducción a la administración y contabilidad básica para la gestión de proyectos.</p>
                     </div>
                 </section>
             </div>
@@ -167,8 +177,8 @@
                         <li>Firebase (Auth & Database)</li>
                         <li>Flutter & Dart (Básico)</li>
                         <li>Control de versiones (GitHub)</li>
-                        <li>Soporte técnico IT</li>
-                        <li>Mantenimiento preventivo de PC</li>
+                        <li>Soporte técnico IT Pro</li>
+                        <li>Mantenimiento de Hardware</li>
                     </ul>
                 </section>
 
@@ -176,15 +186,15 @@
                     <h2>Proyectos</h2>
                     <div class="section-item">
                         <span class="item-title">PetHealth — Android App</span>
-                        <p class="item-desc">Creación de una app móvil para el cuidado de mascotas con recordatorios médicos, historial clínico y geolocalización.</p>
+                        <p class="item-desc">App para cuidado de mascotas con recordatorios, historial médico y geolocalización de clínicas.</p>
                     </div>
                     <div class="section-item">
-                        <span class="item-title">Sistema para Marisquería</span>
-                        <p class="item-desc">Automatización de pedidos por mesa, control de cocina y reportes de venta en PDF.</p>
+                        <span class="item-title">Software para Marisquería</span>
+                        <p class="item-desc">Sistema de comandas, gestión de cocina y reportes de venta automáticos en PDF.</p>
                     </div>
                     <div class="section-item">
-                        <span class="item-title">Catálogo Digital (Flutter)</span>
-                        <p class="item-desc">Desarrollo de una página web para gestión de catálogo en digital.</p>
+                        <span class="item-title">Tienda Digital (Flutter)</span>
+                        <p class="item-desc">Plataforma web para catálogo digital interactivo.</p>
                     </div>
                 </section>
 
@@ -199,6 +209,7 @@
                     <h2>Idiomas</h2>
                     <ul>
                         <li>Español - Nativo</li>
+                        <li>Inglés - A2 (Básico)</li>
                     </ul>
                 </section>
             </div>
